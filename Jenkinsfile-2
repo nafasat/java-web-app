@@ -4,6 +4,16 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   stages {
+
+    stage('checkout') 
+    {
+      steps
+      {
+        slackSend (color: '#00ff04', message: "Build is triggered ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})")
+        checkout scm
+      }
+    }
+  
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
