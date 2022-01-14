@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoApplication {
 
-	public static void main(String[] args) { //NOSONAR
-		SpringApplication.run(DemoApplication.class, args); //NOSONAR
-	} //NOSONAR
+	public static void main(String[] args) { 
+		SpringApplication.run(DemoApplication.class, args); //NOSONAR To ignore code
+	}
 
 	@RequestMapping("/")
   public String home() {
