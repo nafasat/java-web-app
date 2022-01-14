@@ -1,10 +1,6 @@
 pipeline {
   agent any
-  environment 
-  {
-    btime= "${BUILD_TIMESTAMP}"
-    GOOGLE_APPLICATION_CREDENTIALS='/tmp/jenkins-sa.json'
-  }
+
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
