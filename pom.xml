@@ -15,7 +15,36 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<artifactory.url>10.190.0.7:8081</artifactory.url>
 	</properties>
+        <repositories>
+		<repository>
+			<id>ps</id>
+			<url>http://${artifactory.url}/artifactory/ps</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+ 
+        <!-- Plugin external Repository -->
+        <pluginRepositories>
+		<pluginRepository>
+			<id>central</id>
+			<url>http://${artifactory.url}/artifactory/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>snapshots</id>
+			<url>http://${artifactory.url}/artifactory/libs-snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+			</pluginRepositories>
+		
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
